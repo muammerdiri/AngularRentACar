@@ -1,0 +1,17 @@
+<div class="d-inline-flex card" style="width: 18rem;" *ngFor="let car of cars">
+  <img src="https://cdn.pixabay.com/photo/2015/05/15/14/46/bmw-768688_960_720.jpg" class="card-img-top" >
+  <div class="card-body">
+    <h5 class="card-title"> <h4><b>{{car.carName}}</b></h4></h5><br>
+    <dl>
+      <dt><b>Car Id: </b>{{car.carId}}</dt><br>
+      <dt><b>Renk: </b>{{car.colorId}}</dt><br>
+      <dt><b>CarName: </b>{{car.carName}}</dt><br>
+      <dt><b>Marka: </b>{{car.brandId}}</dt><br>
+      <dt><b>Model: </b>{{car.modelYear}}</dt><br>
+      <dt><b>Fiyat: </b>{{car.dailyPrice}}</dt><br>
+      <dt><b>Açıklama: </b>{{car.description}}</dt><br>
+
+    </dl>
+    <a href="#" class="btn btn-primary">Tıkla</a>
+  </div>
+</div>
