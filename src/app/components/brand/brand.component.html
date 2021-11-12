@@ -1,4 +1,18 @@
-<div class="list-group">
-  <h4>Markalar</h4>
-  <a href="#" class="list-group-item list-group-item-action" *ngFor="let brand of brands">{{brand.name}}</a>
-</div>
+
+
+
+
+
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Markalar
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+        <a href="#" class="list-group-item list-group-item-action" *ngFor="let brand of brands">{{brand.brandName}}</a>
+      </div>
+    </div>
+  </div>

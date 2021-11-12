@@ -1,3 +1,4 @@
+import { CarService } from './../../services/car.service';
 import { CarResponseModel } from './../../models/carResponseModel';
 import { Car } from './../../models/car';
 import { Component, OnInit } from '@angular/core';
@@ -10,20 +11,21 @@ import {HttpClient} from '@angular/common/http';
 })
 export class CarComponent implements OnInit {
 
-  apiUrl="https://localhost:44359/api/cars/getall"
+  dataLoaded=false
 
 
 
   cars:Car[] =[]
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private carService:CarService) { }
 
   ngOnInit(): void {
     this.getCar()
   }
   getCar(){
-    this.httpClient.get<CarResponseModel>(this.apiUrl).subscribe((response)=>{
+    this.carService.getCar().subscribe((response)=>{
       this.cars=response.data
+      this.dataLoaded=true
     })
   }
 
