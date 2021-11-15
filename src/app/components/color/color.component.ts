@@ -1,3 +1,4 @@
+import { ColorService } from './../../services/color.service';
 import { ColorResponseModel } from './../../models/colorResponseModel';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -9,18 +10,19 @@ import { Color } from 'src/app/models/color';
   styleUrls: ['./color.component.css']
 })
 export class ColorComponent implements OnInit {
+  dataLoaded=false
 
-  apiUrl="https://localhost:44359/api/colors/getall"
 
   colors:Color[] = []
-  constructor(private httpClient:HttpClient) { }
+  constructor(private colorService:ColorService) { }
 
   ngOnInit(): void {
     this.getColor()
   }
   getColor(){
-    this.httpClient.get<ColorResponseModel>(this.apiUrl).subscribe((response)=>{
+    this.colorService.getColor().subscribe((response)=>{
       this.colors = response.data
+      this.dataLoaded=true
     })
   }
 
