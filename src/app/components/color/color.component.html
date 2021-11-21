@@ -3,5 +3,9 @@
 </div>
 <div class="list-group">
   <h4>Renkler</h4>
-  <a href="#" class="list-group-item list-group-item-action" *ngFor="let color of colors">{{color.colorName}}</a>
+  <a  (click)="setCurrentColor(color)"
+  routerLink="/cars/color/{{color.colorId}}"
+  [class]="getCurrentColorClass(color)"
+  *ngFor="let color of colors">{{color.colorName}}</a>
 </div>
+<h5 *ngIf="currentColor">{{currentColor.colorName}} seçildi</h5>
