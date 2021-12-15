@@ -7,6 +7,9 @@
 </div>
 <div class="table-group">
   <h4>Markalar</h4>
-    <a href="#" class="list-group-item list-group-item-action" *ngFor="let brand of brands">{{brand.brandName}}</a>
+  <a  (click)="setCurrentBrand(brand)"
+  routerLink="/cars/brand/{{brand.brandId}}"
+  [class]="getCurrentBrandClass(brand)"
+  *ngFor="let brand of brands">{{brand.brandName}}</a>
 
 </div>

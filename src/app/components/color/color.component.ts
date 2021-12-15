@@ -3,6 +3,7 @@ import { ColorResponseModel } from './../../models/colorResponseModel';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Color } from 'src/app/models/color';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-color',
@@ -12,10 +13,15 @@ import { Color } from 'src/app/models/color';
 export class ColorComponent implements OnInit {
   dataLoaded=false
   colors:Color[] = []
+
   currentColor:Color;
-  constructor(private colorService:ColorService) { }
+
+  constructor(private colorService:ColorService,
+    private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+
+
     this.getColor()
   }
   getColor(){

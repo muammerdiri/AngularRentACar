@@ -12,7 +12,7 @@ import { BrandResponseModel } from 'src/app/models/brandResponseModel';
 export class BrandComponent implements OnInit {
   dataLoaded=false
 
-
+  currentBrand:Brand
   brands:Brand[]=[]
 
   constructor(private brandService:BrandService) { }
@@ -25,6 +25,16 @@ export class BrandComponent implements OnInit {
       this.brands=response.data
       this.dataLoaded=true
     })
+  }
+  setCurrentBrand(brand:Brand){
+    this.currentBrand=brand
+    }
+  getCurrentBrandClass(brand:Brand){
+    if (brand == this.currentBrand) {
+      return "list-group-item list-group-item-action active"
+    }else{
+      return "list-group-item list-group-item-action "
+    }
   }
 
 }
