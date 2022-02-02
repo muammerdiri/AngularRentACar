@@ -9,7 +9,7 @@ import { BrandComponent } from './components/brand/brand.component';
 import { ColorComponent } from './components/color/color.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import {HttpClientModule} from '@angular/common/http'
     BrandComponent,
     ColorComponent,
     NavbarComponent,
-    SearchComponent
+    SearchComponent,
+
   ],
   imports: [
     BrowserModule,
